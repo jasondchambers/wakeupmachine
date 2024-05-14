@@ -32,7 +32,7 @@ from wakeonlan import send_magic_packet
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/<mac>")
 def hello(mac):
     send_magic_packet(mac)
     return f"Waking up {escape(mac)}"
