@@ -28,10 +28,12 @@
     #app.run(debug=True, host='0.0.0.0', port=port)
 
 
+from wakeonlan import send_magic_packet
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-	return "Hello World!"
+@app.route("/<mac>")
+def hello(mac):
+    send_magic_packet(mac)
+    return f"Waking up {escape(mac)}"
 
