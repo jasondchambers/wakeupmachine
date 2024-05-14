@@ -34,6 +34,7 @@ app = Flask(__name__)
 
 @app.route("/<mac>")
 def hello(mac):
+    print(mac)
     send_magic_packet(mac)
     return f"Waking up {escape(mac)}"
 
