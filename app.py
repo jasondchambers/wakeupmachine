@@ -7,5 +7,6 @@ app = Flask(__name__)
 def wakeup(mac):
     print(mac)
     send_magic_packet(mac)
-    return f"Waking up {escape(mac)}"
+    return render_template('index.html', mac=escape(mac))
+    #return f"Waking up {escape(mac)}"
 
