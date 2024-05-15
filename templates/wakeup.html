@@ -1,35 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-<head>
+  <head>
     <title>Wake Up</title>
     <style type="text/css">
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0px;
-            padding: 0px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0px;
+        padding: 0px;
+      }
 
-    .centered-image {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%; /* adjust this value to match the image width */
-        }
+      .centered-image {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        /*
+         if, for instance, the image is 64x64 pixels,
+         then "move" it half its width/height to the
+         top/left by using negative margins
+     */
+        margin-left: -400px;
+        margin-top: -400px;
+      }
 
-    .centered-text {
-            text-align: center;
-            margin-top: 20px; /* adjust this value to match the image height */
-        }
+      .centered-text {
+        text-align: center;
+        margin-top: 20px; /* adjust this value to match the image height */
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="centered-image">
-        <img src="/static/wakeup.png" alt="Wake Up Image" height="auto">
+      <img src="wakeup.png" alt="Wake Up Image" width="500" height="auto" />
     </div>
 
     <div class="centered-text">
-        <p>Wake Up! {{ mac }}</p>
+      <p>Wake Up! {{ mac }}</p>
     </div>
-</body>
+  </body>
 </html>
