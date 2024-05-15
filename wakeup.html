@@ -11,12 +11,16 @@
       }
 
       .centered-image {
-        max-width: 200px; /* max-width doesn't behave correctly in legacy IE */
-        margin: 0 auto;
-      }
-
-      .centered-image img {
-        width: 100%;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        /*
+         if, for instance, the image is 64x64 pixels,
+         then "move" it half its width/height to the
+         top/left by using negative margins
+     */
+        margin-left: -400px;
+        margin-top: -400px;
       }
 
       .centered-text {
