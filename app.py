@@ -1,6 +1,6 @@
 from wakeonlan import send_magic_packet
 from markupsafe import escape
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/wakeup/<mac>")
